@@ -1,0 +1,5 @@
+{
+  "name": "BJJ Flow Map",
+  "description": "A graph-theory based app to explore Brazilian Jiu-Jitsu positions, transitions, and submissions.",
+  "requestFramePermissions": []
+}

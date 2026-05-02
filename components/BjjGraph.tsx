@@ -15,6 +15,7 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { bjjGraph } from '../app/data/bjj';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const nodeWidth = 180;
 const nodeHeight = 60;
@@ -47,6 +48,8 @@ interface BjjGraphProps {
 }
 
 export default function BjjGraph({ onNodeSelect, selectedNodeId, highlightedNodes, highlightedEdges, isHighlightMode }: BjjGraphProps) {
+  const isMobile = useIsMobile();
+
   const initialNodes: Node[] = useMemo(() => {
     return Object.values(bjjGraph).map((pos) => {
       let bgColor = '#ffffff';
@@ -164,7 +167,7 @@ export default function BjjGraph({ onNodeSelect, selectedNodeId, highlightedNode
         attributionPosition="bottom-right"
       >
         <Controls />
-        <MiniMap nodeStrokeWidth={3} zoomable pannable />
+        {!isMobile && <MiniMap nodeStrokeWidth={3} zoomable pannable />}
         <Background color="#cbd5e1" gap={16} />
       </ReactFlow>
     </div>

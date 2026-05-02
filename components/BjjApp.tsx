@@ -86,10 +86,10 @@ export default function BjjApp() {
   }, [startPositionId, targetSubmission]);
 
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="flex flex-col md:h-full w-full md:overflow-hidden">
       {/* Controls Area */}
-      <div className="p-4 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row gap-4 items-center justify-between">
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+      <div className="p-3 md:p-4 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row gap-3 items-center justify-between shrink-0">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
           <div className="flex flex-col">
             <label className="text-xs font-semibold text-slate-500 mb-1 uppercase tracking-wider">Start Position</label>
             <select
@@ -124,9 +124,9 @@ export default function BjjApp() {
         )}
       </div>
 
-      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+      <div className="flex flex-col md:flex-row flex-1 md:min-h-0">
         {/* Graph Area */}
-        <div className="flex-1 h-[50vh] md:h-full border-b md:border-b-0 md:border-r border-slate-200 relative">
+        <div className="h-[60vh] md:h-auto md:flex-[3] lg:flex-1 border-b md:border-b-0 md:border-r border-slate-200 relative md:min-h-0 z-0">
           <BjjGraph
             selectedNodeId={selectedNodeId}
             onNodeSelect={setSelectedNodeId}
@@ -137,7 +137,7 @@ export default function BjjApp() {
         </div>
 
         {/* Details Area */}
-        <div className="w-full md:w-96 h-[50vh] md:h-full bg-white">
+        <div className="flex-[2] md:flex-none md:w-96 bg-white shrink-0 md:shrink border-t md:border-t-0 border-slate-200 md:overflow-hidden min-h-[40vh] md:min-h-0">
           <PositionDetails
             positionId={selectedNodeId}
             onTransitionClick={setSelectedNodeId}

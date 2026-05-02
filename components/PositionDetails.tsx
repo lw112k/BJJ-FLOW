@@ -60,7 +60,7 @@ export default function PositionDetails({ positionId, onTransitionClick }: Posit
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.2 }}
-        className="h-full flex flex-col overflow-y-auto p-6"
+        className="md:h-full flex flex-col md:overflow-y-auto p-4 sm:p-6"
       >
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-2">
